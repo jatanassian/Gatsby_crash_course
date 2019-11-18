@@ -1,5 +1,4 @@
 import React from 'react';
-import { NONAME } from 'dns';
 import Link from 'gatsby-link';
 
 const Menu = () => (
@@ -8,7 +7,7 @@ const Menu = () => (
     paddingTop: '10px',
   }}>
     <ul style={{
-      listStyle: NONAME,
+      listStyle: 'none',
       display: 'flex',
       justifyContent: 'space-evenly'
     }}>
