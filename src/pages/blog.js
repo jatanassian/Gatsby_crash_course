@@ -9,7 +9,7 @@ const BlogPage = ({data}) => (
   <Layout>
     <SEO title="Blog" />
     <h1>Latest Posts</h1>
-    {data ? data.allMarkdownRemark.edges.map(post => {
+    {data.allMarkdownRemark.edges.map(post => {
       return (
       <div key={post.node.id}>
         <h3>{post.node.frontmatter.title}</h3>
@@ -21,7 +21,7 @@ const BlogPage = ({data}) => (
         <br />
         <hr />
       </div>
-    )}) : null}
+    )})}
   </Layout>
 )
 
