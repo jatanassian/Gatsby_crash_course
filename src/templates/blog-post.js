@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { graphql } from 'gatsby';
 
 export default function Template({data}) {
   const post = data.markedownRemark
@@ -14,3 +15,17 @@ export default function Template({data}) {
     </div>
   )
 }
+
+export const postQuery = graphql`
+  query BlogPostByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path }}){
+      html
+      frontmatter {
+        path
+        title
+        author
+        date
+      }
+    }
+  }
+`
