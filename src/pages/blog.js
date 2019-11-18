@@ -10,4 +10,23 @@ const BlogPage = () => (
   </Layout>
 )
 
+export const pageQuery = graphql`
+  query BlogIndexQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date
+            author
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
+
 export default BlogPage;
